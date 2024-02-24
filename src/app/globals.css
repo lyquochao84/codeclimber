@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,10 +26,40 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+  font-family: "Montserrat", sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  font-family: "Montserrat";
+  font-size: 3rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 10vh;
+  align-items: center;
+  margin: auto;
+}
+
+.nav_links,
+h4 {
+  flex: 1;
+}
+
+.nav_links {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  min-height: 10vh;
+  align-items: center;
+  margin: auto;
 }
