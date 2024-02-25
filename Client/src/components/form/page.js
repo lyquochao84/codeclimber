@@ -1,5 +1,71 @@
 //"use client";
+//import dynamic from "next/dynamic";
 import React, { useState } from "react";
+
+//const DynamicForm = dynamic(() => import("../form"));
+
+export default function MyForm() {
+  const [formValues, setFormValues] = useState({
+    number: "",
+    name: "",
+    prompt: "",
+    timpeComplexity: "",
+    spaceComplexity: "",
+    code: "",
+    explanation: "",
+    topic: [],
+    difficulty: "easy",
+    progress: "pending",
+    relatedLinks: "",
+  });
+  const [selectedTopic, setSelectedTopic] = useState("");
+  const [suggestion, setSuggestion] = useState([]);
+const [topicInput , setTopicInput] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formValues);
+  };
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+
+  //handle Topic Set
+  const handleTopicInputChange = (e) => {
+    let userInput = e.target.value;
+    setTopicInput(userInput);
+    setSuggestion(topicOptions.filter(topic =>topic.toLowerCase().includes(userInput.toLowerCase())).splice(0,5))
+  };
+
+  const handleSelectSuggestion = (topic) =>{
+    if (!formValues.topic.includes(topic)) {
+      setFormValues(prevValues =>({
+        ...prevValues,
+        topic: [...prevValues.topic, topic]
+      }))
+    }
+    setTopicInput('')
+    setSuggestion([])
+  }
+
+  const handleAddTopic = (e) => {
+    e.preventDefault();
+    // prevent adding empty or dublicate hobbies
+    if (!selectedTopic && !formValues.topics.includes(selectedTopic)) {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        topics: [...formValues.topics, topicInput],
+      }));
+      setTopicInput("");
+    }
+  };
 
 const topicOptions = [
   "Array",
