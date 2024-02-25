@@ -15,7 +15,6 @@ async function getData() {
 }
 
 export default function Home() {
-  const [openSubCategories, setOpenSubCategories] = useState(false);
   const [solutionData, setSolutionData] = useState();
 
   useEffect(() => {
