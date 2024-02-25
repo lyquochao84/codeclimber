@@ -7,6 +7,8 @@ import SolutionGrid from "@/components/solution-grid/page";
 import Form from "@/components/form/page";
 import Modal from "@/components/modal/page";
 
+import SideBar from "@/components/sidebar/page"
+
 async function getData() {
   try {
     const data = await fetch("http://localhost:3001/solution/display");
@@ -17,6 +19,7 @@ async function getData() {
     throw error;
   }
 }
+
 
 export default function Home() {
   const { isModalOpen, closeModal } = useModal();

@@ -1,0 +1,26 @@
+/* Sidebar.module.css */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it's above other content */
+    display: flex;
+    justify-content: flex-end; /* Align sidebar to the right */
+  }
+  
+  .sidebar {
+    width: 300px; /* Adjust based on your needs */
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0); /* Adjusted by React inline style based on isOpen */
+  }
+  
+  .closeButton {
+    margin-top: 10px;
+  }
+  

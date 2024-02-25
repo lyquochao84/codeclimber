@@ -8,5 +8,4 @@ router.get('/display', solutionController.display);
 router.delete('/delete:id', solutionController.delete);
 router.put('/update:id', solutionController.update);
 
-
 module.exports = router;
