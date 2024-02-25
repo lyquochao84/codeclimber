@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import styles from "./homepage.module.css";
+
 import SolutionGrid from "@/components/solution-grid/page";
 
 async function getData() {
@@ -15,7 +15,6 @@ async function getData() {
 }
 
 export default function Home() {
-  const [openSubCategories, setOpenSubCategories] = useState(false);
   const [solutionData, setSolutionData] = useState();
 
   useEffect(() => {
@@ -32,9 +31,7 @@ export default function Home() {
     <div>
       <h1>Home Page</h1>
       {solutionData ? (
-        <div>
-          <SolutionGrid solutionData={solutionData} />
-        </div>
+        <SolutionGrid solutionData={solutionData} />
       ) : (
         <p>Loading...</p>
       )}

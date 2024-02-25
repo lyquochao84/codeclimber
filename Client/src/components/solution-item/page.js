@@ -1,31 +1,23 @@
+import { Fragment, useState } from "react";
+
+import { IoMdArrowDropright, IoMdArrowDropdown } from "react-icons/io";
+import ProblemGrid from "../problem-grid/page";
+
 export default function SolutionItem({ solutionData }) {
-  const {
-    problem_number,
-    problem_name,
-    problem_prompt,
-    time_complexity,
-    space_complexity,
-    code,
-    explanation,
-    topic,
-    progress,
-    difficulty,
-    related_link,
-  } = solutionData;
+  const [openSubCategories, setOpenSubCategories] = useState(false);
+  const { topic } = solutionData;
+
+  function openSubHandler() {
+    setOpenSubCategories(!openSubCategories);
+  }
 
   return (
-    <div>
-        <p>{problem_number}</p>
-        <p>{problem_name}</p>
-        <p>{problem_prompt}</p>
-        <p>{time_complexity}</p>
-        <p>{space_complexity}</p>
-        <p>{code}</p>
-        <p>{explanation}</p>
-        <p>{topic}</p>
-        <p>{progress}</p>
-        <p>{difficulty}</p>
-        <p>{related_link}</p>
-    </div>
-  )
+    <Fragment>
+      <div onClick={openSubHandler}>
+        {openSubCategories ? <IoMdArrowDropright /> : <IoMdArrowDropdown />}
+        {topic}
+      </div>
+      {!openSubCategories && <ProblemGrid solutionData={solutionData} />} 
+    </Fragment>
+  );
 }
