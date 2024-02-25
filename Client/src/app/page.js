@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 
 import SolutionGrid from "@/components/solution-grid/page";
 
-import Form from "@/components/form/page"
+import Form from "@/components/form/page";
+
+import Modal from "@/components/modal/page";
 
 async function getData() {
   try {
@@ -18,6 +20,7 @@ async function getData() {
 
 export default function Home() {
   const [solutionData, setSolutionData] = useState();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     getData()
@@ -29,9 +32,16 @@ export default function Home() {
       });
   }, []);
 
+  // handle open modal
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div>
-      <Form></Form>
+      <button onClick={handleOpenModal}>Open Form</button>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <Form />
+      </Modal>
       <h1>Home Page</h1>
       {solutionData ? (
         <SolutionGrid solutionData={solutionData} />

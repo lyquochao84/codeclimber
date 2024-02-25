@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-
 export default function MyForm() {
   const [formValues, setFormValues] = useState({
     number: "",
     name: "",
     prompt: "",
-    timpeComplexity: "",
+    timeComplexity: "",
     spaceComplexity: "",
     code: "",
     explanation: "",
@@ -15,54 +14,6 @@ export default function MyForm() {
     progress: "pending",
     relatedLinks: "",
   });
-  const [selectedTopic, setSelectedTopic] = useState("");
-  const [suggestion, setSuggestion] = useState([]);
-const [topicInput , setTopicInput] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formValues);
-  };
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
-
-  //handle Topic Set
-  const handleTopicInputChange = (e) => {
-    let userInput = e.target.value;
-    setTopicInput(userInput);
-    setSuggestion(topicOptions.filter(topic =>topic.toLowerCase().includes(userInput.toLowerCase())).splice(0,5))
-  };
-
-  const handleSelectSuggestion = (topic) =>{
-    if (!formValues.topic.includes(topic)) {
-      setFormValues(prevValues =>({
-        ...prevValues,
-        topic: [...prevValues.topic, topic]
-      }))
-    }
-    setTopicInput('')
-    setSuggestion([])
-  }
-
-  const handleAddTopic = (e) => {
-    e.preventDefault();
-    // prevent adding empty or dublicate hobbies
-    if (!selectedTopic && !formValues.topics.includes(selectedTopic)) {
-      setFormValues((prevValues) => ({
-        ...prevValues,
-        topics: [...formValues.topics, topicInput],
-      }));
-      setTopicInput("");
-    }
-  };
 
   const topicOptions = [
     "Array",
@@ -106,20 +57,75 @@ const [topicInput , setTopicInput] = useState("");
     "Geometry",
   ];
 
+  const [selectedTopic, setSelectedTopic] = useState("");
+  const [suggestion, setSuggestion] = useState([]);
+  const [topicInput, setTopicInput] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formValues);
+  };
+
+  const handleInputChange = (e) => {
+    //setInputValue(e.target.value);
+
+    const { name, value } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  //handle Topic Set
+  const handleTopicInputChange = (e) => {
+    let userInput = e.target.value;
+    setTopicInput(userInput);
+    setSuggestion(
+      topicOptions
+        .filter((topic) =>
+          topic.toLowerCase().includes(userInput.toLowerCase())
+        )
+        .splice(0, 5)
+    );
+  };
+
+  const handleSelectSuggestion = (topic) => {
+    if (!formValues.topic.includes(topic)) {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        topic: [...prevValues.topic, topic],
+      }));
+    }
+    setTopicInput("");
+    setSuggestion([]);
+  };
+
+  const handleAddTopic = (e) => {
+    e.preventDefault();
+    // prevent adding empty or dublicate hobbies
+    if (!selectedTopic && !formValues.topics.includes(selectedTopic)) {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        topics: [...formValues.topics, topicInput],
+      }));
+      setTopicInput("");
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        No.
+        Problem Number
         <input
           type="text"
-          name="problemNumber"
+          name="number"
           value={formValues.number}
           onChange={handleInputChange}
         />
       </label>
 
       <label>
-        Name
+        Problem Name
         <input
           type="text"
           name="name"
@@ -140,7 +146,7 @@ const [topicInput , setTopicInput] = useState("");
         Time Complexity
         <input
           type="text"
-          name="timeComp"
+          name="timeComplexity"
           value={formValues.timpeComplexity}
           onChange={handleInputChange}
         />
@@ -149,7 +155,7 @@ const [topicInput , setTopicInput] = useState("");
         Space Complexity
         <input
           type="text"
-          name="spaceComp"
+          name="spaceComplexity"
           value={formValues.spaceComplexity}
           onChange={handleInputChange}
         />
@@ -172,23 +178,32 @@ const [topicInput , setTopicInput] = useState("");
           onChange={handleInputChange}
         />
       </label>
-<label>
-  Topic:
-  <input type="text" value={topicInput} onChange={handleTopicInputChange} autoComplete="off" />
-  {suggestion.length > 0 &&(
-    <ul>
-      {suggestion.map((suggestion,index) => (
-        <li key={index} onClick={() => handleSelectSuggestion(suggestion)}>{suggestion}</li>
-      ))}
-    </ul>
-  )}
-</label>
-<ul>
-  {formValues.topic.map((topic,index) => (
-    <li key={index} >{topic}</li>
-  ))}
-</ul>
-
+      <label>
+        Topic:
+        <input
+          type="text"
+          value={topicInput}
+          onChange={handleTopicInputChange}
+          autoComplete="off"
+        />
+        {suggestion.length > 0 && (
+          <ul>
+            {suggestion.map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSelectSuggestion(suggestion)}
+              >
+                {suggestion}
+              </li>
+            ))}
+          </ul>
+        )}
+      </label>
+      <ul>
+        {formValues.topic.map((topic, index) => (
+          <li key={index}>{topic}</li>
+        ))}
+      </ul>
 
       <label>
         Difficulty:
