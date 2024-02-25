@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { IoMdArrowDropright, IoMdArrowDropdown } from "react-icons/io";
 
 import HashTagGrid from "../hashtag-grid/page";
-import ProblemItem from "../problem-item/page";
+
 
 export default function ProblemGrid({ solutionData }) {
   const { problem_number, problem_name, difficulty, progress } = solutionData;
@@ -24,7 +24,7 @@ export default function ProblemGrid({ solutionData }) {
           <li>{progress}</li>
         </ul>
       </div>
-      <div>{!openHashTag && <HashTagGrid solutionData={solutionData} />}</div>
+      {!openHashTag && <HashTagGrid solutionData={solutionData} />}
     </Fragment>
   );
 }

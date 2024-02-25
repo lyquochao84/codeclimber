@@ -13,13 +13,11 @@ export default function SolutionItem({ solutionData }) {
 
   return (
     <Fragment>
-      <div className='flex ' onClick={openSubHandler}>
+      <div onClick={openSubHandler}>
         {openSubCategories ? <IoMdArrowDropright /> : <IoMdArrowDropdown />}
         {topic}
       </div>
-      <div>
-        {!openSubCategories && <ProblemGrid solutionData={solutionData} />}
-      </div>
+      {!openSubCategories && <ProblemGrid solutionData={solutionData} />} 
     </Fragment>
   );
 }
