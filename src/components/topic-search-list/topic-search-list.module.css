@@ -1,0 +1,15 @@
+.topic_list_item {
+  border: 2px solid gray;
+  border-radius: 20px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.topic_list_item:hover {
+  cursor: pointer;
+}

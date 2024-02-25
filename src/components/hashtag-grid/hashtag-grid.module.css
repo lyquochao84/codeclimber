@@ -1,0 +1,25 @@
+.hashtag_wrapper {
+  margin-top: 4px;
+  margin-left: 280px;
+  margin-bottom: 10px;
+  width: 40%;
+  height: 20%;
+  border: 3px solid #808080;
+  border-radius: 20px;
+  display: flex;
+  padding: 20px 0;
+}
+
+.hashtag_title {
+  margin-left: 10px;
+  font-size: 1.6rem;
+  border: 2px solid gray;
+  border-radius: 20px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 5px;
+}
