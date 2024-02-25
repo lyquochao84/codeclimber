@@ -21,6 +21,7 @@ async function getData() {
 export default function Home() {
   const { isModalOpen, closeModal } = useModal();
   const [solutionData, setSolutionData] = useState();
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   useEffect(() => {
     getData()

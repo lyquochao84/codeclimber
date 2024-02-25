@@ -32,9 +32,9 @@ export default function Navigation() {
         Add
       </button>
       <div className={styles.icons_wrapper}>
-        <FaLandMineOn className={styles.icon_neon}/>
+        <FaLandMineOn className={styles.icon_neon} />
         <span>/</span>
-        <CiLight className={styles.icon_light}/>
+        <CiLight className={styles.icon_light} />
       </div>
       <Image
         className={styles.user_avatar}

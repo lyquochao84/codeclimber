@@ -3,7 +3,7 @@
     margin-bottom: 10px;
     width: 60%;
     height: 20%;
-    border: 3px solid #808080;
+    border: 3px solid rgb(166, 246, 255);
     border-radius: 20px;
     display: flex;
     padding: 20px 0;
@@ -15,9 +15,11 @@
 
 .topic_icon {
     font-size: 30px;
+    color: rgb(166, 246, 255);
 }
 
 .topic_title {
     margin-top: 5px;
     font-size: 24px;
+    color: rgb(166, 246, 255);
 }

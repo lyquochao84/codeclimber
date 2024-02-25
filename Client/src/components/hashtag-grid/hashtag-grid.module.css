@@ -4,7 +4,7 @@
   margin-bottom: 10px;
   width: 40%;
   height: 20%;
-  border: 3px solid #808080;
+  border: 3px solid rgb(166, 246, 255);
   border-radius: 20px;
   display: flex;
   padding: 20px 0;
@@ -13,10 +13,10 @@
 .hashtag_title {
   margin-left: 10px;
   font-size: 1.6rem;
-  border: 2px solid gray;
+  border: 2px solid rgb(166, 246, 255);
   border-radius: 20px;
   display: inline-block;
-  color: black;
+  color: rgb(166, 246, 255);
   text-align: center;
   padding: 5px;
   text-decoration: none;

@@ -3,7 +3,7 @@
     margin-left: 250px;
     width: 50%;
     height: 20%;
-    border: 3px solid #808080;
+    border: 3px solid rgb(166, 246, 255);
     border-radius: 20px;
     display: flex;
     padding: 20px 0;
@@ -15,6 +15,7 @@
 
 .problem_icon {
     font-size: 28px;
+    color: rgb(166, 246, 255);
 }
 
 .problem_list {
@@ -26,6 +27,7 @@
     margin-top: 5px;
     font-size: 15px;
     margin-right: 100px;
+    color: rgb(166, 246, 255);
 }
 
 .problem_item:last-child {
