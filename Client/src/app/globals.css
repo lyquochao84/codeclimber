@@ -3,7 +3,17 @@
 @tailwind utilities;
 
 :root {
-  
+  /* Light Mode */
+  --light-mode-blue: #8CB9BD;
+  --light-mode-white: #FEFBF6;
+  --light-mode-orange: #ECB159;
+  --light-mode-brown: #B67352;
+
+  /* Dark Mode */
+  --dark-mode-fullyhack: #340b67;
+  --dark-mode-white: #F3F8FF;
+  --dark-mode-pink: #E26EE5;
+  --dark-mode-purple: #7E30E1;
 }
 
 * {
@@ -14,6 +24,7 @@
 
 html,
 body {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 62.5%;
   line-height: 1.6rem;
   scroll-behavior: smooth;

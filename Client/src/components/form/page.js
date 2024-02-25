@@ -1,8 +1,47 @@
 //"use client";
-//import dynamic from "next/dynamic";
 import React, { useState } from "react";
 
-//const DynamicForm = dynamic(() => import("../form"));
+const topicOptions = [
+  "Array",
+  "String",
+  "Hash Table",
+  "Dynamic Programming",
+  "Math",
+  "Sorting",
+  "Greedy",
+  "Depth-First-Search",
+  "Binary Search",
+  "Database",
+  "Breadth-First Search",
+  "Tree",
+  "Matrix",
+  "Two Pointers Bit Manipulation",
+  "Binary Tree",
+  "Heap (Priority Queue)",
+  "Stack",
+  "Prefix Sum",
+  "Simulation",
+  "Graph",
+  "Desgin",
+  "Counting",
+  "Sliding Window",
+  "Bracktracking",
+  "Union Find",
+  "Enumeration",
+  "Linked List",
+  "Ordered Set",
+  "Monotonic Stack",
+  "Number Theory",
+  "Trie",
+  "Divide and Conquer",
+  "Recursion",
+  "Bitmask",
+  "Queue",
+  "Binaray Search Tree",
+  "Segment Tree",
+  "Memoriztion",
+  "Geometry",
+];
 
 export default function MyForm() {
   const [formValues, setFormValues] = useState({
@@ -20,7 +59,7 @@ export default function MyForm() {
   });
   const [selectedTopic, setSelectedTopic] = useState("");
   const [suggestion, setSuggestion] = useState([]);
-const [topicInput , setTopicInput] = useState("");
+  const [topicInput, setTopicInput] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,19 +80,25 @@ const [topicInput , setTopicInput] = useState("");
   const handleTopicInputChange = (e) => {
     let userInput = e.target.value;
     setTopicInput(userInput);
-    setSuggestion(topicOptions.filter(topic =>topic.toLowerCase().includes(userInput.toLowerCase())).splice(0,5))
+    setSuggestion(
+      topicOptions
+        .filter((topic) =>
+          topic.toLowerCase().includes(userInput.toLowerCase())
+        )
+        .splice(0, 5)
+    );
   };
 
-  const handleSelectSuggestion = (topic) =>{
+  const handleSelectSuggestion = (topic) => {
     if (!formValues.topic.includes(topic)) {
-      setFormValues(prevValues =>({
+      setFormValues((prevValues) => ({
         ...prevValues,
-        topic: [...prevValues.topic, topic]
-      }))
+        topic: [...prevValues.topic, topic],
+      }));
     }
-    setTopicInput('')
-    setSuggestion([])
-  }
+    setTopicInput("");
+    setSuggestion([]);
+  };
 
   const handleAddTopic = (e) => {
     e.preventDefault();
@@ -66,48 +111,6 @@ const [topicInput , setTopicInput] = useState("");
       setTopicInput("");
     }
   };
-
-  const topicOptions = [
-    "Array",
-    "String",
-    "Hash Table",
-    "Dynamic Programming",
-    "Math",
-    "Sorting",
-    "Greedy",
-    "Depth-First-Search",
-    "Binary Search",
-    "Database",
-    "Breadth-First Search",
-    "Tree",
-    "Matrix",
-    "Two Pointers Bit Manipulation",
-    "Binary Tree",
-    "Heap (Priority Queue)",
-    "Stack",
-    "Prefix Sum",
-    "Simulation",
-    "Graph",
-    "Desgin",
-    "Counting",
-    "Sliding Window",
-    "Bracktracking",
-    "Union Find",
-    "Enumeration",
-    "Linked List",
-    "Ordered Set",
-    "Monotonic Stack",
-    "Number Theory",
-    "Trie",
-    "Divide and Conquer",
-    "Recursion",
-    "Bitmask",
-    "Queue",
-    "Binaray Search Tree",
-    "Segment Tree",
-    "Memoriztion",
-    "Geometry",
-  ];
 
   return (
     <form onSubmit={handleSubmit}>
@@ -175,23 +178,32 @@ const [topicInput , setTopicInput] = useState("");
           onChange={handleInputChange}
         />
       </label>
-<label>
-  Topic:
-  <input type="text" value={topicInput} onChange={handleTopicInputChange} autoComplete="off" />
-  {suggestion.length > 0 &&(
-    <ul>
-      {suggestion.map((suggestion,index) => (
-        <li key={index} onClick={() => handleSelectSuggestion(suggestion)}>{suggestion}</li>
-      ))}
-    </ul>
-  )}
-</label>
-<ul>
-  {formValues.topic.map((topic,index) => (
-    <li key={index} >{topic}</li>
-  ))}
-</ul>
-
+      <label>
+        Topic:
+        <input
+          type="text"
+          value={topicInput}
+          onChange={handleTopicInputChange}
+          autoComplete="off"
+        />
+        {suggestion.length > 0 && (
+          <ul>
+            {suggestion.map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSelectSuggestion(suggestion)}
+              >
+                {suggestion}
+              </li>
+            ))}
+          </ul>
+        )}
+      </label>
+      <ul>
+        {formValues.topic.map((topic, index) => (
+          <li key={index}>{topic}</li>
+        ))}
+      </ul>
 
       <label>
         Difficulty:

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import SolutionGrid from "@/components/solution-grid/page";
 
-import Form from "@/components/form/page"
+import Form from "@/components/form/page";
 
 async function getData() {
   try {
