@@ -8,7 +8,8 @@ async function getData() {
     const data = await fetch("http://localhost:3001/solution/display");
     const solutionData = await data.json();
     return solutionData;
-  } catch (error) {
+  } 
+  catch (error) {
     console.log("failed to fetch", error);
     throw error;
   }
