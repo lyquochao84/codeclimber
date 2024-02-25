@@ -1,8 +1,5 @@
-//"use client";
-//import dynamic from "next/dynamic";
 import React, { useState } from "react";
 
-//const DynamicForm = dynamic(() => import("../form"));
 
 export default function MyForm() {
   const [formValues, setFormValues] = useState({
