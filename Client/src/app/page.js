@@ -18,27 +18,27 @@ async function getData() {
 }
 
 export default function Home() {
-  const [solutionData, setSolutionData] = useState();
+  // const [solutionData, setSolutionData] = useState();
 
-  useEffect(() => {
-    getData()
-      .then((data) => {
-        setSolutionData(data);
-      })
-      .catch((error) => {
-        console.error("Error in Home component:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   getData()
+  //     .then((data) => {
+  //       setSolutionData(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error in Home component:", error);
+  //     });
+  // }, []);
 
-  return (
-    <div>
-      <Form></Form>
-      <h1>Home Page</h1>
-      {solutionData ? (
-        <SolutionGrid solutionData={solutionData} />
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <Form></Form>
+  //     <h1>Home Page</h1>
+  //     {solutionData ? (
+  //       <SolutionGrid solutionData={solutionData} />
+  //     ) : (
+  //       <p>Loading...</p>
+  //     )}
+  //   </div>
+  // );
 }
