@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 
 import SolutionGrid from "@/components/solution-grid/page";
 
+import Form from "@/components/form/page"
+
 async function getData() {
   try {
     const data = await fetch("http://localhost:3001/solution/display");
@@ -30,6 +32,7 @@ export default function Home() {
 
   return (
     <div>
+      <Form></Form>
       <h1>Home Page</h1>
       {solutionData ? (
         <SolutionGrid solutionData={solutionData} />
