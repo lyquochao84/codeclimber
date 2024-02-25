@@ -1,7 +1,11 @@
-export default function HashTagGrid({ solutionData }) {
-    const { topic } = solutionData;
+import styles from "./hashtag-grid.module.css";
 
-    return (
-        <span>#{topic}</span>
-    )
+export default function HashTagGrid({ solutionData }) {
+  const { topic } = solutionData;
+
+  return (
+    <div className={styles.hashtag_wrapper}>
+      <span className={styles.hashtag_title}>#{topic}</span>
+    </div>
+  );
 }

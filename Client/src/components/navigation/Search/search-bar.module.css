@@ -4,7 +4,7 @@
   padding: 20px 24px;
   margin-top: 50px;
   position: relative;
-  margin-left: -20px;
+  margin-left: -30px;
 
   background-color: transparent;
   transition: transform 250ms ease-in-out;
@@ -30,6 +30,7 @@
   letter-spacing: 1.5px;
 }
 
+/* 
 .search_bar:hover,
 .search_bar:focus {
   padding: 12px 0;
@@ -38,4 +39,4 @@
   border-bottom: 1px solid #575756;
   border-radius: 0;
   background-position: 100% center;
-}
+} */

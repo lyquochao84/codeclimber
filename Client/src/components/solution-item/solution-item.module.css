@@ -1,0 +1,23 @@
+.topic_wrapper {
+    margin-left: 200px;
+    margin-bottom: 10px;
+    width: 60%;
+    height: 20%;
+    border: 3px solid #808080;
+    border-radius: 20px;
+    display: flex;
+    padding: 20px 0;
+}
+
+.topic_wrapper:hover {
+    cursor: pointer;
+}
+
+.topic_icon {
+    font-size: 30px;
+}
+
+.topic_title {
+    margin-top: 5px;
+    font-size: 24px;
+}

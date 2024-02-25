@@ -1,3 +1,4 @@
+import { ModalProvider } from "@/context/ModalContext";
 import "./globals.css";
 import styles from './layout.module.css';
 import Navigation from "@/components/navigation/navigation";
@@ -12,8 +13,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className={styles.wrap}>
-          <Navigation />
-          <main className={styles.content}>{children}</main>
+          <ModalProvider>
+            <Navigation />
+            <main className={styles.content}>{children}</main>
+          </ModalProvider>
         </div>
       </body>
     </html>

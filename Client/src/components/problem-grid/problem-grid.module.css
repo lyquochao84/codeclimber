@@ -1,0 +1,33 @@
+.problem_container {
+    margin-top: 4px;
+    margin-left: 250px;
+    width: 50%;
+    height: 20%;
+    border: 3px solid #808080;
+    border-radius: 20px;
+    display: flex;
+    padding: 20px 0;
+}
+
+.problem_container:hover {
+    cursor: pointer;
+}
+
+.problem_icon {
+    font-size: 28px;
+}
+
+.problem_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.problem_item {
+    margin-top: 5px;
+    font-size: 15px;
+    margin-right: 100px;
+}
+
+.problem_item:last-child {
+    margin-left: 20px;
+}

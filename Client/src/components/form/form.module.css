@@ -1,0 +1,159 @@
+.form {
+  width: 100%;
+  height: 100%;
+  padding: 0 80px;
+  overflow-y: scroll;
+}
+
+.problem_input_name_number,
+.problem_input_description,
+.problem_input_complexities,
+.problem_input_code,
+.problem_input_explanation,
+.problem_input_options,
+.problem_input_related_link {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.label > span {
+  font-size: 1.6rem;
+  margin-left: 5px;
+}
+
+.input {
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  font-size: 1.4rem;
+  color: #555;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.text_area {
+  margin-top: 6px;
+  border-radius: 15px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  font-size: 1.4rem;
+  color: #555;
+  outline: none;
+  width: 532%;
+  height: 150px;
+  resize: none;
+}
+
+.text_area_topic {
+  margin-top: 6px;
+  border-radius: 15px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  font-size: 1.4rem;
+  color: #555;
+  outline: none;
+  width: 20%;
+  height: 40px;
+  resize: none;
+}
+
+.suggestion_list {
+  width: 68%;
+  background-color: #fff;
+  overflow: auto;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.selected_topics_list {
+  width: 68%;
+  background-color: #fff;
+  overflow: auto;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  margin-top: 11px;
+  margin-left: 10px;
+}
+
+.selected_topics_list:hover {
+  cursor: pointer;
+}
+
+.selected_topics_list:hover .select_topic_cancel_icon {
+  cursor: pointer;
+  display: block;
+}
+
+.select_topic_cancel_icon {
+  display: none;
+  float: right;
+  margin-top: -5px;
+  font-size: 15px;
+}
+
+.selected_topic {
+  border: 2px solid gray;
+  border-radius: 20px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.selected_topics_wrap {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.select {
+  margin-top: 10px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 5px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.option_choose {
+  border: 5px solid gray;
+}
+
+.button_container {
+  display: flex;
+  float: right;
+}
+
+.saveButton {
+  border: 2px solid gray;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  padding: 5px 22px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.closeButton {
+  border: 2px solid gray;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  padding: 5px 22px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 5px;
+}
